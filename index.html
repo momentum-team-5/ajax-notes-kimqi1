@@ -4,9 +4,36 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Notes</title>
-</head>
-<body>
+  <link
+      rel="stylesheet"
+      href="https://cdn.shoelace.style/1.0.0-beta.25/shoelace.css"
+    />
+    <link rel="stylesheet" href="style.css" />  
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.0/moment.min.js"
+      integrity="sha512-Izh34nqeeR7/nwthfeE0SI3c8uhFSnqxV0sI9TvTcXiFJkMd6fB644O64BRq2P/LA/+7eRvCw4GmLsXksyTHBg=="
+      crossorigin="anonymous"
+    ></script>
+    <script src="main.js" defer></script>
   
+  <title>My Notarium</title>
+</head>
+<body class-"mar-md"></body>
+  <header>
+    <h1>My Notarium</h1>
+  </header>
+  <form id="Notes-form" class="form">
+    <div class="input-field">
+      <label for="note-input"></label>
+      <input type="text" id="note-input" />
+    </div>
+    <div class="input-field">
+      <button type="submit" class="button-lg">Add a Note</button>
+    </div>
+  </form>
+  <section class="note-list">
+    <ul id="note-list"></ul>
+  </section>
 </body>
 </html>
+
