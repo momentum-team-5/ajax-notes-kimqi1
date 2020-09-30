@@ -1,17 +1,16 @@
 const url = 'http://localhost:3000/notes'
-const noteInput = document.querySelector('#note-input').value
-
+const noteList = document.querySelector('#note-list')
 document.addEventListener('submit', function (event) {
   event.preventDefault()
-  createNote()
-  renderNoteItem()
-  deleteNote()
-renderNoteList()
-  
+  createnote()
 })
 
-
-
+noteList.addEventListener('click', function (e) {
+  if (e.target.matches('.delete')) {
+    console.log(e.target.parentElement.dataset.id)
+    deletenote(e.target.parentElement.dataset.id)
+  }
+})
 function renderNoteList () {
   fetch(url)
     .then(res => res.json())
@@ -21,9 +20,7 @@ function renderNoteList () {
       }
     })
 }
-
-
-function renderNoteItem (note) {
+function rendernoteItem (note) {
   const noteList = document.querySelector('#note-list')
   const noteItemEl = document.createElement('li')
   noteItemEl.dataset.id = note.id
@@ -34,31 +31,24 @@ function renderNoteItem (note) {
   noteItemEl.appendChild(deleteIcon)
   noteList.appendChild(noteItemEl)
 }
-
-function createNote () {
-  const noteInput = document.querySelector('#note-input').value
-  console.log(noteInput)
-
-  fetch(url, {
+function createnote () {
+  const noteInputField = document.querySelector('#note-input')
+  const requestData = {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
-      noteItem: noteInput,
+      noteItem: noteInputField.value,
       created_at: moment().format()
     })
-  })
+  }
+  fetch(url, requestData)
     .then(res => res.json())
     .then(data => {
-      const noteList = document.querySelector('#note-list')
-      const noteItemEl = document.createElement('li')
-      noteItemEl.innerText = data.noteItem
-      noteList.appendChild(noteItemEl)
+      noteInputField.value = ''
+      rendernoteItem(data)
     })
 }
-
-
-
-function deleteNote (noteId) {
+function deletenote (noteId) {
   fetch(url + '/' + noteId, {
     method: 'DELETE'
   })
@@ -68,3 +58,5 @@ function deleteNote (noteId) {
       itemToRemove.remove()
     })
 }
+
+renderNoteList()
