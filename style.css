@@ -1,3 +1,9 @@
 .delete {
-    color: red;
+    color: rgb(252, 4, 4);
   }
+
+
+#first-row {
+    display: flex;
+    flex-direction: row;
+}

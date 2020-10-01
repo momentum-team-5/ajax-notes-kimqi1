@@ -27,7 +27,7 @@ function rendernoteItem (note) {
   noteItemEl.id = `item-${note.id}`
   noteItemEl.innerText = note.noteItem
   const deleteIcon = document.createElement('span')
-  deleteIcon.classList.add('fas', 'fa-times', 'mar-l-xs', 'delete')
+  deleteIcon.classList.add('fas', 'fa-trash-alt', 'mar-l-xs', 'delete')
   noteItemEl.appendChild(deleteIcon)
   noteList.appendChild(noteItemEl)
 }
