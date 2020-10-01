@@ -10,11 +10,14 @@
 }
 
 .grid-container {
-    display: inline-grid;
+    display: grid;
+    grid-gap: 50px 10px;
     grid-template-columns: auto auto auto;
-    background-color: #2196F3;
+    
     padding: 10px;
-    border-radius: 5px;
+    width: 300px
+    /* border-radius: 5px; */
+    
   }
   
   .grid-item {
@@ -25,13 +28,15 @@
     text-align: center;
     border-radius: 5px;
     box-shadow: 5px 10px 20px;
-    height: 150px;
-    width: 200px;
+    grid-row-gap: 250px;
+    /* height: 150px;
+    width: 500px; */
+    
 }
 
 #delete-box{
     
-    width: 90px; 
+    width: 45px; 
     text-align: center;
 }
 #edit-box{
@@ -39,17 +44,18 @@
     text-align: center; 
 }
 #note-box{
-    width: 500px; 
-    text white;
+    width: 900px; 
+    font-size: small;
    
 }
 #notelist-box{
     /* height: 150px;
     width: 300px; */
     background-color: lightskyblue; 
-    border-radius: 5px;
+    /* border-radius: 5px; */
     border: 1px solid black;
     box-shadow: 5px 10px 20px;
+    grid-row-gap: 50px;
 
 /* #first-row {
     display: flex;

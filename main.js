@@ -30,7 +30,7 @@ function rendernoteItem (note) {
   notelistBox.classList.add("grid-container")
   notelistBox.innerHTML = ` 
     <div class="grid-item note-box">${note.noteItem}</div>
-    <div class="grid-item delete-box" data-note-id=${note.id}>Delete</div>
+    <div class="grid-item delete-box" data-note-id=${note.id}><i class="fas fa-trash-alt"></i></div>
   `
   noteList.appendChild(notelistBox)
 }
