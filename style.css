@@ -21,16 +21,31 @@
     background-color: lightskyblue;
     border: 1px solid rgba(0, 0, 0, 0.8);
     padding: 20px;
-    font-size: 30px;
+    font-size: 20px;
     text-align: center;
     border-radius: 5px;
     box-shadow: 5px 10px 20px;
- 
+    height: 150px;
+    width: 200px;
 }
 
+#delete-box{
+    
+    width: 90px; 
+    text-align: center;
+}
+#edit-box{
+    width: 90px;
+    text-align: center; 
+}
+#note-box{
+    width: 500px; 
+    text white;
+   
+}
 #notelist-box{
-    height: 150px;
-    width: 300px;
+    /* height: 150px;
+    width: 300px; */
     background-color: lightskyblue; 
     border-radius: 5px;
     border: 1px solid black;
